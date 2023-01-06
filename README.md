@@ -8,7 +8,10 @@ in IOS or Android.
 
 Result Images:
 
+<div style="display:inline-block;">
 <img src="list.jpg" width="200"/>
 <img src="record1.jpg" width="200"/>
+
 <img src="record2.jpg" width="200"/>
 <img src="norecord.jpg" width="200"/>
+</div>
