@@ -25,7 +25,6 @@ const Information = ({ route, navigation }) => {
           sat_writing: foundSAT[0].sat_writing_avg_score,
         };
       });
-      console.log("sat", sat);
     }
   }, []);
   return foundSAT.length === 0 ? (
