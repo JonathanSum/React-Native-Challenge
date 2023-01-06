@@ -8,7 +8,7 @@ in IOS or Android.
 
 Result Images:
 
-<img src="list.jpg" size="50px"/>
-<img src="record1.jpg" size="50px"/>
-<img src="record2.jpg" size="50px"/>
-<img src="norecord.jpg" size="50px"/>
+<img src="list.jpg" width="128"/>
+<img src="record1.jpg" width="128"/>
+<img src="record2.jpg" width="128"/>
+<img src="norecord.jpg" width="128"/>
