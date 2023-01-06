@@ -8,10 +8,10 @@ in IOS or Android.
 
 Result Images:
 
-`<img src="list.jpg"/>`
+<img src="list.jpg"/>
 
-`<img src="record1.jpg"/>`
+<img src="record1.jpg"/>
 
-`<img src="record2.jpg"/>`
+<img src="record2.jpg"/>
 
-`<img src="norecord.jpg"/>`
+<img src="norecord.jpg"/>
