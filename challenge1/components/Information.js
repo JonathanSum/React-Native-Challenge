@@ -27,6 +27,7 @@ const Information = ({ route, navigation }) => {
       });
     }
   }, []);
+  const noRecord = <Text style={[InfoStyles.itemText]}>No Record</Text>;
   return foundSAT.length === 0 ? (
     <View
       style={[
@@ -37,25 +38,41 @@ const Information = ({ route, navigation }) => {
         },
       ]}
     >
-      <Text style={[InfoStyles.itemText]}>No Record</Text>
+      noRecord
     </View>
   ) : (
     <View style={InfoStyles.container}>
       <View style={InfoStyles.innerContainer}>
         <Text style={InfoStyles.itemText}>School: </Text>
-        <Text style={InfoStyles.itemText}>{sat.school_name}</Text>
+        {sat.school_name !== undefined ? (
+          <Text style={InfoStyles.itemText}>{sat.school_name}</Text>
+        ) : (
+          noRecord
+        )}
       </View>
       <View style={InfoStyles.innerContainer}>
         <Text style={InfoStyles.itemText}>Reading SAT score: </Text>
-        <Text style={InfoStyles.itemText}>{sat.sat_reading}</Text>
+        {sat.sat_reading !== undefined ? (
+          <Text style={InfoStyles.itemText}>{sat.sat_reading}</Text>
+        ) : (
+          noRecord
+        )}
       </View>
       <View style={InfoStyles.innerContainer}>
         <Text style={InfoStyles.itemText}>Math SAT score: </Text>
-        <Text style={InfoStyles.itemText}>{sat.sat_math}</Text>
+        {sat.sat_math !== undefined ? (
+          <Text style={InfoStyles.itemText}>{sat.sat_math}</Text>
+        ) : (
+          noRecord
+        )}
       </View>
       <View style={InfoStyles.innerContainer}>
         <Text style={InfoStyles.itemText}>Writing SAT score: </Text>
-        <Text style={InfoStyles.itemText}>{sat.sat_writing}</Text>
+        {sat.sat_writing !== undefined ? (
+          <Text style={InfoStyles.itemText}>{sat.sat_writing}</Text>
+        ) : (
+          noRecord
+        )}
       </View>
     </View>
   );
@@ -74,6 +91,7 @@ const InfoStyles = StyleSheet.create({
   itemText: {
     color: "#F4CE14",
     fontSize: 20,
+    padding: 5,
   },
 });
 export default Information;
