@@ -1,32 +1,44 @@
 import React from "react";
 
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Pressable } from "react-native";
 import schoolData from "../assets/school.json";
-
-const Item = ({ name, price }) => (
-  <View style={menuStyles.innerContainer}>
-    <Text style={menuStyles.itemText}>{name}</Text>
-    <Text style={menuStyles.itemText}>{price}</Text>
-  </View>
-);
-
-const MenuItems = () => {
-  const renderItem = ({ item }) => <Item name={item.school_name} />;
+import NYCSchoolHeader from "./NYCSchoolHeader";
+import NYCSchoolFooter from "./NYCSchoolFooter";
+const MenuItems = ({ navigation }) => {
+  const renderItem = ({ item }) => (
+    <Item name={item.school_name} id={item.dbn} />
+  );
+  const Item = ({ name, id }) => (
+    <Pressable
+      onPress={() =>
+        navigation.navigate("Info", {
+          itemId: id,
+        })
+      }
+      style={menuStyles.innerContainer}
+    >
+      <Text style={menuStyles.itemText}>{name}</Text>
+    </Pressable>
+  );
 
   return (
-    <View style={menuStyles.container}>
-      <FlatList
-        data={schoolData}
-        keyExtractor={(item) => item.dbn}
-        renderItem={renderItem}
-      ></FlatList>
-    </View>
+    <>
+      <View style={menuStyles.container}>
+        <FlatList
+          data={schoolData}
+          keyExtractor={(item) => item.dbn}
+          renderItem={renderItem}
+        ></FlatList>
+      </View>
+      <NYCSchoolFooter />
+    </>
   );
 };
 
 const menuStyles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#333333",
   },
   innerContainer: {
     paddingHorizontal: 40,
